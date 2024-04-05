@@ -1,4 +1,6 @@
 stdio.h
  {print"arijit"
  }
-scanf{"arijit"}
+scanf{"arijit"
+
+hello i am updating this file}
