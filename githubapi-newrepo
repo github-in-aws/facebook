@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# GitHub organization name
+ORG_NAME="your_organization_name"
+
+# GitHub username
+USERNAME="your_github_username"
+
+# GitHub personal access token
+TOKEN="your_personal_access_token"
+
+# Repository name
+REPO_NAME="new_repository_name"
+
+# Repository description
+REPO_DESC="This is a new repository created using the GitHub API"
+
+# JSON data for repository creation
+DATA="{\"name\": \"$REPO_NAME\", \"description\": \"$REPO_DESC\", \"private\": false}"
+
+# Create repository using GitHub API
+curl -X POST -H "Authorization: token $TOKEN" -d "$DATA" "https://api.github.com/orgs/$ORG_NAME/repos"
+
+# Check if repository creation was successful
+if [ $? -eq 0 ]; then
+    echo "Repository $REPO_NAME created successfully in $ORG_NAME organization."
+else
+    echo "Failed to create repository $REPO_NAME in $ORG_NAME organization."
+fi
