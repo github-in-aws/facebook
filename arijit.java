@@ -1,3 +1,4 @@
+jai ho
 stdio.h
  {print"arijit"
  }
